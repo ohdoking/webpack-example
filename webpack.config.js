@@ -1,8 +1,12 @@
 /*
 	entry
 		프로퍼티로 빌드되기 전의 파일 경로
+		key-value로 하는 경우 [name]속성으로 이름 사용 가능
 	ouput
 		bundle로 만들어질 파일의 정보를 명시
+		[name] : entry에서의 key값
+		[hash] : 컴파일의 md5 해시값
+		[chunkhash] : 해당 청크(번들)의 해시값
 	devtool
 		소스 맵 설정을 사용하면 컴파일된 파일에서도 원래 파일 구조를 확인 가능
 	module
@@ -27,10 +31,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-	entry: './entry.js',
+	entry: {
+		index: './entry.js'
+	},
 	output: {
 		path: __dirname,
-		filename: 'bundle.[hash].js'
+		filename: '[name].[hash].bundle.js'
 	},
 	devtool: '#inline-source-map',
 	module: {
