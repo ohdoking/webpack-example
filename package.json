@@ -15,7 +15,9 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "html-webpack-plugin": "^2.24.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
